@@ -62,8 +62,49 @@ Widget tombolAction(context, String text) {
 
 Widget fieldName(String text) {
   // membuat Input Text
-  return TextFormField(
-      decoration: InputDecoration(
-    labelText: text,
-  ));
+
+  return Padding(
+      padding: EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            text,
+            style: TextStyle(fontSize: 14),
+          ),
+          SizedBox(height: 10),
+          TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ))
+        ],
+      ));
+}
+
+Widget fieldNameLeft(String text) {
+  // membuat Input Text
+
+  return Padding(
+      padding: EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 120,
+            padding: EdgeInsets.only(right: 15),
+            child: Text(
+              text,
+              overflow: TextOverflow.fade,
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+          Expanded(
+              child: TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  )))
+        ],
+      ));
 }

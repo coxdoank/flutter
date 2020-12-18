@@ -9,33 +9,35 @@ class PesananBaru extends StatelessWidget {
       appBar: AppBar(
         title: Text("Pesanan Baru"),
       ),
-      body: Container(
-        margin: EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            // Text("ini halaman pesanan baru"),
-            // RaisedButton(
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            //   child: Text("Back To Home"),
-            // ),
-            // RaisedButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => DaftarPesanan()),
-            //     );
-            //   },
-            //   child: Text("Ke Daftar Pesanan"),
-            // ),
-            fieldName('Kode'),
-            fieldName('Nama Lengkap'),
-            fieldName('Keterangan'),
-            fieldName('Harga'),
-            fieldName('Satuan'),
-            tombolAction(context, "Simpan"),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              // Text("ini halaman pesanan baru"),
+              // RaisedButton(
+              //   onPressed: () {
+              //     Navigator.pop(context);
+              //   },
+              //   child: Text("Back To Home"),
+              // ),
+              // RaisedButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => DaftarPesanan()),
+              //     );
+              //   },
+              //   child: Text("Ke Daftar Pesanan"),
+              // ),
+              fieldNameLeft('Kode'),
+              fieldNameLeft('Nama Lengkap'),
+              fieldNameLeft('Keterangan'),
+              fieldNameLeft('Harga'),
+              fieldNameLeft('Satuan'),
+              tombolAction(context, "Simpan"),
+            ],
+          ),
         ),
       ),
     );
