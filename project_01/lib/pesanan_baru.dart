@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_01/component.dart';
+import 'package:dropdown_formfield/dropdown_formfield.dart';
 
 class PesananBaru extends StatelessWidget {
   // This widget is the root of your application.
@@ -35,6 +36,7 @@ class PesananBaru extends StatelessWidget {
               fieldNameLeft('Keterangan'),
               fieldNameLeft('Harga'),
               fieldNameLeft('Satuan'),
+              dropDownList('Satuan'),
               tombolAction(context, "Simpan"),
             ],
           ),

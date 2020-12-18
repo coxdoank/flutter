@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dropdown_formfield/dropdown_formfield.dart';
 
 Widget tombolUtama(context, String text, IconData icon, page) {
   final textColor = Colors.white;
@@ -95,7 +96,6 @@ Widget fieldNameLeft(String text) {
             padding: EdgeInsets.only(right: 15),
             child: Text(
               text,
-              overflow: TextOverflow.fade,
               style: TextStyle(fontSize: 14),
             ),
           ),
@@ -107,4 +107,79 @@ Widget fieldNameLeft(String text) {
                   )))
         ],
       ));
+}
+
+// Widget dropDownList(String text) {
+//   String dropdownValue = 'One';
+//   return DropdownButton<String>(
+//     value: dropdownValue,
+//     icon: Icon(Icons.arrow_downward),
+//     iconSize: 24,
+//     elevation: 16,
+//     style: TextStyle(color: Colors.deepPurple),
+//     underline: Container(
+//       height: 2,
+//       color: Colors.deepPurpleAccent,
+//     ),
+//     onChanged: (String newValue) {
+//       // setState(() {
+//       //   dropdownValue = newValue;
+//       // });
+//     },
+//     items: <String>['One', 'Two', 'Free', 'Four']
+//         .map<DropdownMenuItem<String>>((String value) {
+//       return DropdownMenuItem<String>(
+//         value: value,
+//         child: Text(value),
+//       );
+//     }).toList(),
+//   );
+// }
+
+Widget dropDownList(String text) {
+  String _myActivity;
+  // String _myActivityResult;
+
+  return DropDownFormField(
+    titleText: 'My workout',
+    hintText: 'Please choose one',
+    value: _myActivity,
+    onSaved: (value) {},
+    onChanged: (value) {
+      print(value);
+      _myActivity = value;
+    },
+    dataSource: [
+      {
+        "display": "Running",
+        "value": "Running",
+      },
+      {
+        "display": "Climbing",
+        "value": "Climbing",
+      },
+      {
+        "display": "Walking",
+        "value": "Walking",
+      },
+      {
+        "display": "Swimming",
+        "value": "Swimming",
+      },
+      {
+        "display": "Soccer Practice",
+        "value": "Soccer Practice",
+      },
+      {
+        "display": "Baseball Practice",
+        "value": "Baseball Practice",
+      },
+      {
+        "display": "Football Practice",
+        "value": "Football Practice",
+      },
+    ],
+    textField: 'display',
+    valueField: 'value',
+  );
 }
